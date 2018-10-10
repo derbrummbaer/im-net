@@ -7,7 +7,7 @@
 # Argument Variables from YAML File
 ############################################################
 
-FROM amd64/debian:latest
+FROM amd64/debian:stable-backports
 
 # File Author / Maintainer
 MAINTAINER Sven Berger

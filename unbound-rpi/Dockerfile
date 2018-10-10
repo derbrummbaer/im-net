@@ -7,7 +7,7 @@
 # Argument Variables from YAML File
 ############################################################
 
-FROM arm32v7/debian:latest
+FROM arm32v7/debian:stable-backports
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
