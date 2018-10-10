@@ -1,12 +1,12 @@
 ############################################################
-# Dockerfile to build Organizr Container Image
-# based on Linuxserver Organizr Image
+# Dockerfile to build Proxy Image
+# bases on linuxserver.io/letsencrypt
 ############################################################
-# Container organizr
+# Container APP für Proxy Server mit Letsencrypt
 ############################################################
 
 # Set the base Image
-FROM lsiocommunity/organizr:latest
+FROM linuxserver/letsencrypt:latest
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
