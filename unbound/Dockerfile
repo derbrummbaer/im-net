@@ -7,7 +7,7 @@
 # Argument Variables from YAML File
 ############################################################
 
-FROM amd64/debian:stable-backports
+FROM amd64/debian:stable
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
@@ -48,7 +48,9 @@ RUN apt update \
 # Install Software: Unbound
 ############################################################
 
-RUN apt -y install unbound
+RUN apt -y install \
+    unbound \
+    dnscrypt-proxy
 
 ############################################################
 # Remove Apt Data

@@ -7,7 +7,7 @@
 # Argument Variables from YAML File
 ############################################################
 
-FROM arm32v7/debian:stable-backports
+FROM resin/rpi-raspbian:stretch
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
@@ -19,7 +19,7 @@ MAINTAINER Sven Berger
 ############################################################
 
 #COPY bin/ /usr/bin/
-# RUN [ "cross-build-start" ]
+RUN [ "cross-build-start" ]
 
 ############################################################
 # don't ask for stupid things
@@ -74,7 +74,9 @@ RUN chmod +x /run.sh
 # Folders needed
 ############################################################
 
-# VOLUME
+VOLUME ["/etc/unbound/unbound.conf.d/", \
+        "/etc/unbound/dnsovertls", \
+        "/var/log/homegear"]
 
 ############################################################
 # Ports needed
@@ -88,7 +90,7 @@ EXPOSE 53/udp
 ############################################################
 ############################################################
 
-# RUN [ "cross-build-end" ]
+RUN [ "cross-build-end" ]
 
 ############################################################
 # Container Start
