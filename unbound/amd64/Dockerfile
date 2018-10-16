@@ -78,8 +78,7 @@ RUN chmod +x /run.sh
 # Folders needed
 ############################################################
 
-VOLUME ["/etc/unbound/unbound.conf.d/", \
-        "/etc/unbound/dnsovertls"]
+VOLUME ["/etc/unbound/unbound.conf.d", "/etc/unbound/dnsovertls"]
 
 ############################################################
 # Ports needed
