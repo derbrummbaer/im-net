@@ -50,7 +50,8 @@ RUN apt update \
 
 RUN apt -y install \
     unbound \
-    dnscrypt-proxy
+    dnscrypt-proxy \
+    curl
 
 ############################################################
 # Remove Apt Data
