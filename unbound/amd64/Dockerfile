@@ -63,7 +63,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ############################################################
 
 COPY config/unbound.conf /etc/unbound/unbound.conf
-# RUN unbound-checkconf
+RUN curl ftp://ftp.internic.net/domain/named.cache > /etc/unbound/root.hints \
+    && unbound-checkconf
 
 ############################################################
 # Copy Start Scripts
@@ -76,7 +77,8 @@ RUN chmod +x /run.sh
 # Folders needed
 ############################################################
 
-# VOLUME
+VOLUME ["/etc/unbound/unbound.conf.d/", \
+        "/etc/unbound/dnsovertls"]
 
 ############################################################
 # Ports needed
