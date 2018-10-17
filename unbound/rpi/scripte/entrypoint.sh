@@ -10,7 +10,7 @@ set -e
 
 # From CentOS but not sure how to do on alpine..
 /usr/sbin/unbound-anchor -v4 \
-    -a /usr/share/dnssec-root/trusted-key.key \
+    -a /var/lib/unbound/root.key \
     -r /etc/unbound/root.hints
 
 exec "$@"
