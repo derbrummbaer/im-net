@@ -103,4 +103,4 @@ EXPOSE 53/udp
 ############################################################
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-CMD [ "/usr/sbin/unbound", "-dv" ]
+CMD [ "/run.sh" ]

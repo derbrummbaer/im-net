@@ -103,4 +103,4 @@ RUN [ "cross-build-end" ]
 ############################################################
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-CMD [ "/usr/sbin/unbound", "-dv" ]
+CMD [ "/run.sh" ]

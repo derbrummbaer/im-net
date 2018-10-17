@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl ftp://ftp.internic.net/domain/named.cache > /etc/unbound/root.hints
+# url ftp://ftp.internic.net/domain/named.cache > /etc/unbound/root.hints
 
 # Start unbound
-exec unbound
+exec unbound -c /etc/unbound/unbound.conf -d -v
