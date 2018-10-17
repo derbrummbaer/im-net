@@ -1,8 +1,6 @@
 #!/bin/sh
 set -e
 
-curl ftp://ftp.internic.net/domain/named.cache > /etc/unbound/root.hints
-
 /usr/sbin/unbound-checkconf
 
 /usr/sbin/unbound-control-setup -d /etc/unbound/
