@@ -72,13 +72,15 @@ RUN curl ftp://ftp.internic.net/domain/named.cache > /etc/unbound/root.hints
 ############################################################
 
 COPY scripte/run.sh /run.sh
+COPY scripte/entrypoint.sh /entrypoint.sh
 RUN chmod +x /run.sh
+RUN chmod +x /entrypoint.sh
 
 ############################################################
 # Folders needed
 ############################################################
 
-VOLUME ["/etc/unbound/unbound.conf.d", "/etc/unbound/dnsovertls"]
+VOLUME ["/etc/unbound/conf.d", "/etc/unbound/local.d", "/etc/unbound/dnsovertls"]
 
 ############################################################
 # Ports needed
@@ -98,4 +100,5 @@ RUN [ "cross-build-end" ]
 # Container Start
 ############################################################
 
-CMD ["/run.sh"]
+ENTRYPOINT [ "/entrypoint.sh" ]
+CMD [ "/usr/sbin/unbound", "-dv" ]

@@ -10,3 +10,5 @@ FROM pihole/pihole:4.0.0-1_amd64
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
+
+COPY ./scripte/entrypoint.sh /entrypoints/pihole.sh
