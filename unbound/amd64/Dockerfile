@@ -50,6 +50,8 @@ RUN apt update \
 
 RUN apt -y install \
     unbound \
+    unbound-anchor \
+    unbound-host \
     dnscrypt-proxy \
     curl
 
