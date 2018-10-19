@@ -67,6 +67,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY config/unbound.conf /etc/unbound/unbound.conf
 RUN curl ftp://ftp.internic.net/domain/named.cache > /etc/unbound/root.hints
+
 #RUN unbound-checkconf
 
 ############################################################
@@ -78,11 +79,16 @@ COPY scripte/entrypoint.sh /entrypoint.sh
 RUN chmod +x /run.sh
 RUN chmod +x /entrypoint.sh
 
+RUN /usr/sbin/unbound-anchor -v4 \
+    -a /var/lib/unbound/root.key \
+    -r /etc/unbound/root.hints
+
 ############################################################
 # Folders needed
 ############################################################
 
-VOLUME ["/etc/unbound/conf.d", "/etc/unbound/local.d", "/etc/unbound/dnsovertls"]
+VOLUME ["/etc/unbound/conf.d", "/etc/unbound/local.d"]
+# , "/etc/unbound/dnsovertls"]
 
 ############################################################
 # Ports needed
