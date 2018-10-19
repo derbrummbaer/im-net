@@ -79,6 +79,7 @@ COPY scripte/entrypoint.sh /entrypoint.sh
 RUN chmod +x /run.sh
 RUN chmod +x /entrypoint.sh
 RUN find / -name root.key
+
 RUN chown unbound:unbound -R /var/lib/unbound
 RUN chmod +w -R /var/lib/unbound
 RUN /usr/sbin/unbound-anchor -v4 \
