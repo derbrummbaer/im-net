@@ -9,7 +9,7 @@ set -e
 # /etc/periodic/monthly/update-unbound-root-hints
 
 # From CentOS but not sure how to do on alpine..
-/usr/sbin/unbound-anchor -v 4 \
+/usr/sbin/unbound-anchor -v4 \
     -a /var/lib/unbound/root.key \
     -r /etc/unbound/root.hint
 
