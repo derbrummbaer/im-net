@@ -10,3 +10,4 @@ FROM gogs/gogs:latest
 
 # File Author / Maintainer
 MAINTAINER Sven Berger
+
